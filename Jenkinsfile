@@ -3,8 +3,7 @@ pipeline {
     environment {
         DOCKER_IMAGE = "my-jenkins-app"
         DOCKER_TAG = "latest"
-        DOCKER_REPO = "rohith1305/my-jenkins-app"
-        DOCKER_CREDENTIALS_ID = "93c470a0-e8fe-425c-8f55-932aae8919d4" // Jenkins credentials ID
+        DOCKER_REPO = "anushreegm12/my-jenkins-app"
         CONTAINER_NAME = "mycontainer1"
         CONTAINER_NAME1 = "mycontainer2"
 
@@ -18,7 +17,7 @@ pipeline {
         stage('Docker Login') {
             steps {
                 script {
-                    docker.withRegistry('https://index.docker.io/v1/', DOCKER_CREDENTIALS_ID) {
+                    docker.withRegistry('https://index.docker.io/v1/', docker-hub-credentials) {
                         echo "Logged into Docker Hub"
                     }
                 }
@@ -48,7 +47,7 @@ pipeline {
         stage('Push to Docker Hub') {
             steps {
                 script {
-                    docker.withRegistry('https://index.docker.io/v1/', DOCKER_CREDENTIALS_ID) {
+                    docker.withRegistry('https://index.docker.io/v1/', docker-hub-credentials)) {
                         sh "docker tag ${DOCKER_IMAGE}:${DOCKER_TAG} ${DOCKER_REPO}:${DOCKER_TAG}"
                         sh "docker push ${DOCKER_REPO}:${DOCKER_TAG}"
                     }
