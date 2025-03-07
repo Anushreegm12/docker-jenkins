@@ -1,7 +1,7 @@
 pipeline{
 	agent any
 	environment{
-		DOCKER_IMAGE = "anushreegm12/my-jenkins-app"
+		DOCKER_IMAGE = "anushreegm12/my-jenkins-app1"
 		DOCKER_CREDENTIALS_ID = "docker-hub-credentials"
 
 	}
