@@ -33,7 +33,7 @@ pipeline{
 	stage('Run Container Locally'){
 		steps {
 			script {
-				sh "docker run -d -p 8050:80 --name jenkins-docker2 ${DOCKER_IMAGE}:latest"
+				sh "docker run -d -p 8050:80 --name jenkins-docker3 ${DOCKER_IMAGE}:latest"
 			}
 		}
 }
