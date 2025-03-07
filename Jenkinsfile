@@ -4,7 +4,7 @@ pipeline {
         DOCKER_IMAGE = "my-jenkins-app"
         DOCKER_TAG = "latest"
         DOCKER_REPO = "anushreegm12/my-jenkins-app"
-        DOCKER_CREDENTIALS_ID = docker-hub-credentials
+        DOCKER_CREDENTIALS_ID = 'docker-hub-credentials'
         CONTAINER_NAME = "mycontainer1"
         CONTAINER_NAME1 = "mycontainer2"
 
