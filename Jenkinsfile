@@ -4,6 +4,7 @@ pipeline {
         DOCKER_IMAGE = "my-jenkins-app"
         DOCKER_TAG = "latest"
         DOCKER_REPO = "anushreegm12/my-jenkins-app"
+        DOCKER_CREDENTIALS_ID = ""
         CONTAINER_NAME = "mycontainer1"
         CONTAINER_NAME1 = "mycontainer2"
 
@@ -17,7 +18,7 @@ pipeline {
         stage('Docker Login') {
             steps {
                 script {
-                    docker.withRegistry('https://index.docker.io/v1/', docker-hub-credentials) {
+                    docker.withRegistry('https://index.docker.io/v1/', DOCKER_CREDENTIALS_ID) {
                         echo "Logged into Docker Hub"
                     }
                 }
