@@ -1,7 +1,7 @@
 pipeline{
 	agent any
 	environment{
-		DOCKER_IMAGE = "anushreegm12/my-jenkins-app1"
+		DOCKER_IMAGE = "anushreegm12/my-jenkins-app"
 		DOCKER_CREDENTIALS_ID = "docker-hub-credentials"
 
 	}
@@ -33,7 +33,7 @@ pipeline{
 	stage('Run Container Locally'){
 		steps {
 			script {
-				sh "docker run -d -p 8050:80 --name jenkins-docker ${DOCKER_IMAGE}:latest"
+				sh "docker run -d -p 8050:80 --name jenkins-docker1 ${DOCKER_IMAGE}:latest"
 			}
 		}
 }
